@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Revision</title>
+        <style>
+
+            .container {
+                background-image: linear-gradient(purple, lightpink);
+                width: 300px;
+                height: 550px;
+
+                display: flex;
+                flex-direction: column;
+
+                margin-left: 550px;
+                margin-top: 75px;
+
+                text-align: center;
+
+                border-radius: 5px;
+
+            }
+
+            .number {
+                font-size: 140px;
+                color: white;
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 4px );
+            }
+
+            button {
+                width: 250px;
+                height: 50px;
+                align-self: center;
+                border-radius: 5px;
+                font-size: 35px;
+                color: white;
+            }
+
+            .double {
+
+                background: rgba(0, 255, 47, 0.25);
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 4px );
+                -webkit-backdrop-filter: blur( 4px );
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+            }
+
+            .save {
+
+                margin-top: 15px;
+
+                background: rgba(255, 0, 0, 0.25);
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 4px );
+                -webkit-backdrop-filter: blur( 4px );
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
+            }
+
+            .savedNums {
+                margin-top: -30px;
+                margin-bottom: 45px;
+                text-align: left;
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 20px;
+                color: white;
+            }
+
+
+        </style>
+        
+
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <h1 class="number" id="num">1</h1>
+
+            <p class="savedNums" id="saves">Saves: </p>
+
+            <button class="double" onclick=doubleNum() >DOUBLE</button>
+
+            <button class="save" onclick="save()">SAVE</button>
+
+        </div>
+
+        <script>
+            let currentNumber = document.getElementById("num")
+
+            function doubleNum() {
+                currentNumber.textContent = currentNumber.textContent * 2
+            }
+
+            let savedNums = document.getElementById("saves")
+
+            function save() {
+
+                savedNums.textContent += currentNumber.textContent + " - "
+
+                currentNumber.textContent = 1
+
+            }
+
+        </script>
+
+    </body>
+</html>
